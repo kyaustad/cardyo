@@ -1,0 +1,12 @@
+node_modules
+dist
+android
+.git
+.gitignore
+Dockerfile
+.dockerignore
+README.md
+.env
+.vscode
+.output
+.nuxt
