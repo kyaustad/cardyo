@@ -1,5 +1,7 @@
 # Cardyo - Simple PWA for Digital Card Creation
 
+![Cardyo Screenshot](screenshot.png)
+
 Cardyo is a lightweight Progressive Web App (PWA) that allows users to create and share digital business cards. All the card's data is embedded in the URL query parameters, making it easily shareable via a QR code or direct link.  
 
 ## 🚀 Features  
