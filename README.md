@@ -1,75 +1,35 @@
-# Nuxt UI Starter
+# Cardyo - Simple PWA for Digital Card Creation
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+Cardyo is a lightweight Progressive Web App (PWA) that allows users to create and share digital business cards. All the card's data is embedded in the URL query parameters, making it easily shareable via a QR code or direct link.  
 
-## Setup
+## 🚀 Features  
 
-Make sure to install the dependencies:
+- 🖼️ **Customizable Cards**: Input Name, Company, Title, Avatar Image, Email, and Phone Number  
+- 🔗 **URL-Based Storage**: No database required, all data lives in the URL query parameters  
+- 📱 **PWA Support**: Installable on mobile and desktop  
+- 📷 **QR Code Generation**: Instantly generate and download a QR code for easy sharing  
+- 🖥️ **Lightweight & Fast**: Built with Nuxt.js for seamless performance  
 
-```bash
-# npm
-npm install
+## 🛠️ Tech Stack  
 
-# pnpm
-pnpm install
+- **Nuxt.js** (Vue 3 & Vite)  
+- **PWA Module** for offline support  
+- **QR Code Generator**  
+- **Tailwind CSS** for styling  
 
-# yarn
-yarn install
 
-# bun
-bun install
-```
 
-## Development Server
+## 🔄 How It Works  
 
-Start the development server on `http://localhost:3000`:
+1. Enter your details (Name, Company, Title, Avatar URL, Email, Phone)  
+2. Generate a shareable link with all data encoded in the URL  
+3. Download a QR code for quick sharing  
+4. Others can scan or click the link to instantly see the digital card  
 
-```bash
-# npm
-npm run dev
+## 📜 License  
 
-# pnpm
-pnpm run dev
+This project is licensed under the [MIT License](LICENSE).  
 
-# yarn
-yarn dev
+---
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+💡 **Contributions are welcome!** Feel free to submit issues or pull requests.  
