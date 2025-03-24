@@ -25,7 +25,7 @@ onMounted(() => {
 <template>
   <div class="flex flex-col items-center justify-center gap-4 h-screen">
     <NuxtPwaManifest />
-    <div class="flex flex-col items-center gap-2">
+    <div class="flex flex-col items-center gap-2 mt-60 pb-10">
       <TheViewComponent v-if="type && type === 'view'" :url-card="info" />
       <TheCreateComponent v-else />
     </div>

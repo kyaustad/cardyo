@@ -67,7 +67,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-between gap-4 w-full">
+  <div class="flex flex-col justify-between gap-4 w-full mt-12">
     <QRCode :url />
     <h1 class="font-bold text-5xl text-(--ui-primary)">Create A Card</h1>
 
@@ -108,7 +108,7 @@ onMounted(() => {
         />
       </UFormField>
 
-      <UButton type="submit" label="Submit" />
+      <a :href="`${url}`"> <UButton label="View Your Card" /></a>
     </UForm>
   </div>
 </template>
