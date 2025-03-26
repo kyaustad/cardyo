@@ -10,7 +10,8 @@ Cardyo is a lightweight Progressive Web App (PWA) that allows users to create an
 - 🔗 **URL-Based Storage**: No database required, all data lives in the URL query parameters  
 - 📱 **PWA Support**: Installable on mobile and desktop  
 - 📷 **QR Code Generation**: Instantly generate and download a QR code for easy sharing  
-- 🖥️ **Lightweight & Fast**: Built with Nuxt.js for seamless performance  
+- 🖥️ **Lightweight & Fast**: Built with Nuxt.js for seamless performance
+- Downlaodable Contact Card (.vcf)
 
 ## 🛠️ Tech Stack  
 
