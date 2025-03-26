@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import { useClipboard } from "#imports";
+import type { Card } from "~~/types/card";
+import VCard from "vcard-creator";
 
-const { url = "waiting" } = defineProps<{
+const { url = "waiting", card } = defineProps<{
   url?: string;
+  card?: Card;
 }>();
 
 const { copy } = useClipboard({
@@ -47,6 +50,53 @@ const downloadSVG = () => {
 const copyToClipboard = async () => {
   copy(url);
 };
+
+async function fetchImageBase64(url: string): Promise<string | null> {
+  try {
+    const response = await $fetch(`/api/convertImage`, { params: { url } });
+    return response.base64;
+  } catch (error) {
+    console.error("Failed to convert image:", error);
+    return null;
+  }
+}
+
+const downloadVCard = async () => {
+  if (!card) {
+    return;
+  }
+
+  let avatar64 = null;
+
+  if (card.avatar) {
+    avatar64 = await fetchImageBase64(card.avatar);
+    console.log(avatar64);
+  }
+  const vcard = new VCard();
+
+  vcard
+    .addName(card.lName, card.fName)
+    .addCompany(card.co as string)
+    .addJobtitle(card.title as string)
+    .addEmail(card.email as string)
+    .addPhoneNumber(card.phone, "WORK");
+  if (avatar64) {
+    vcard.addPhoto(avatar64);
+  } else if (!avatar64 && card.avatar) {
+    vcard.addPhotoURL(card.avatar);
+  }
+
+  const blob = new Blob([vcard.toString()], { type: "text/vcard" });
+  const downloadUrl = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = downloadUrl;
+  a.download = `${card.fName}_${card.lName}.vcf`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(downloadUrl);
+};
 </script>
 
 <template>
@@ -55,19 +105,27 @@ const copyToClipboard = async () => {
   >
     <Qrcode id="QRcode" :value="url" class="w-[90%] h-[90%]" variant="circle" />
 
-    <div class="flex flex-row justify-between p-1 w-[90%] items-center">
+    <div class="flex flex-row justify-between p-1 w-[100%] items-center">
       <UButton
         icon="i-lucide-download"
         variant="outline"
-        label="Download QR Code"
+        label="QR Code"
         size="xs"
         @click="downloadSVG"
+      />
+      <UButton
+        v-if="card"
+        icon="i-lucide-square-user-round"
+        variant="outline"
+        label="Contact (.vcf)"
+        size="xs"
+        @click="downloadVCard"
       />
       <UPopover>
         <UButton
           size="xs"
           icon="i-lucide-link"
-          label="Copy Card Link"
+          label="Copy Link"
           variant="outline"
           @click="copyToClipboard"
         />

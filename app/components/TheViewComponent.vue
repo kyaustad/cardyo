@@ -27,7 +27,8 @@ onMounted(() => {
   <div
     class="flex flex-col justify-between text-start items-start gap-4 bg-zinc-500/25 p-4 rounded-xl shadow-xl m-2 mt-0"
   >
-    <QRCode :url="url" />
+    <QRCode :url="url" :card="urlCard" />
+
     <div class="flex flex-row justify-center w-full gap-4 items-center">
       <NuxtImg
         v-if="urlCard.avatar && urlCard.avatar !== ''"

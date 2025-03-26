@@ -23,7 +23,8 @@
     "@vueuse/nuxt": "^13.0.0",
     "dotenv": "^16.4.7",
     "nuxt": "^3.16.1",
-    "uqr": "^0.1.2"
+    "uqr": "^0.1.2",
+    "vcard-creator": "^0.7.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.2.0",
