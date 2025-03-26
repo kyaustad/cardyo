@@ -1,4 +1,4 @@
-# Cardyo - Simple PWA for Digital Card Creation
+# Cardyo - Simple PWA for Digital Business Card Creation
 
 ![Cardyo Screenshot](screenshot.png)
 
