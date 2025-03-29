@@ -15,6 +15,8 @@ Cardyo is a lightweight Progressive Web App (PWA) that allows users to create an
 
 ## Installation
 
+This assumes you have docker installed and running already on your machine or server.
+
 - Run the following command to pull the docker image:
 ```
 docker pull ghcr.io/kyaustad/cardyo:latest
