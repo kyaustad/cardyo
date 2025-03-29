@@ -13,6 +13,28 @@ Cardyo is a lightweight Progressive Web App (PWA) that allows users to create an
 - 🖥️ **Lightweight & Fast**: Built with Nuxt.js for seamless performance
 - Downlaodable Contact Card (.vcf)
 
+## Installation
+
+- Run the following command to pull the docker image:
+```
+docker pull ghcr.io/kyaustad/cardyo:latest
+```
+- Run this command to run the docker container on your machine:
+```
+docker run -d -p 8080:3000 ghcr.io/kyaustad/cardyo:latest 
+```
+The ``` -d ``` runs the container in detached mode ( in the background ) and change the ``` 8080 ``` to whatever port you want the container to run on. 3000 is the internal container port, do not change that.
+
+### Unraid Installation
+
+- Go to the Docker tab and at the bottom press, Add Container.
+- For the repsitory put:
+```
+ghcr.io/kyaustad/cardyo:latest
+```
+-  Then scroll down and add a new port and for the container port put ``` 3000 ``` and for the Host port put whatever you want it to run on.
+-  Thats it! You have to name the image and when you hit apply it will pull the image and run it if there are no conflicts.
+
 ## 🛠️ Tech Stack  
 
 - **Nuxt.js** (Vue 3 & Vite)  
