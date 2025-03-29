@@ -37,6 +37,8 @@ ghcr.io/kyaustad/cardyo:latest
 -  Then scroll down and add a new port and for the container port put ``` 3000 ``` and for the Host port put whatever you want it to run on.
 -  Thats it! You have to name the image and when you hit apply it will pull the image and run it if there are no conflicts.
 
+IF ANYONE WITH AN UNRAID CA REPO WANTS TO HOST THIS PLEASE DO! Let me know but I'd love to have it on the community apps.
+
 ## 🛠️ Tech Stack  
 
 - **Nuxt.js** (Vue 3 & Vite)  
