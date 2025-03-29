@@ -24,12 +24,17 @@ const url = computed(() => {
     appConfig.ui.colors.primary
   }&type=view&fName=${formatFName()}&lName=${formatLName()}${avatarStr}&email=${
     newCard.value.email
-  }&phone=${newCard.value.phone}&co=${formatCompany()}&title=${formatTitle()}`;
+  }&phone=${formatPhone()}&co=${formatCompany()}&title=${formatTitle()}`;
 });
 
 const formatEmail = () => {
   if (newCard.value.email) {
     newCard.value.email = newCard.value.email.replace(/ /g, "");
+  }
+};
+const formatPhone = () => {
+  if (newCard.value.phone) {
+    return newCard.value.phone.replace(/ /g, "%20");
   }
 };
 const formatCompany = () => {
@@ -95,16 +100,13 @@ onMounted(() => {
       <UFormField label="Email" name="email" class="w-full">
         <UInput v-model="newCard.email" class="w-full" @change="formatEmail" />
       </UFormField>
-      <UFormField label="Phone" name="email" class="w-full">
-        <p class="text-xs text-gray-400 pb-1">10 Digit Phone Number</p>
+      <UFormField label="Phone" name="phone" class="w-full">
         <UInput
           v-model="newCard.phone"
-          :maxLength="10"
           type="tel"
           label="Phone"
           name="phone"
           class="w-full"
-          @change="newCard.phone = newCard.phone.replace(/\D/g, '')"
         />
       </UFormField>
 

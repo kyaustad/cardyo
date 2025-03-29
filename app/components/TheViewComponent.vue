@@ -7,17 +7,6 @@ const { urlCard } = defineProps<{
   urlCard: Card;
 }>();
 
-const formatPhoneNumber = () => {
-  // Remove any non-numeric characters
-  const cleaned = urlCard.phone.replace(/\D/g, "");
-
-  if (cleaned.length !== 10) {
-    return "Invalid Phone Number";
-  }
-
-  return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
-};
-
 onMounted(() => {
   url.value = window.location.href;
 });
@@ -88,7 +77,7 @@ onMounted(() => {
         class="flex flex-row justify-between w-content gap-4 items-center cursor-pointer"
       >
         <p class="font-bold text-2xl text-(--ui-primary)">
-          {{ formatPhoneNumber() }}
+          {{ urlCard.phone }}
         </p>
         <UIcon name="i-lucide-phone" size="large" class="text-(--ui-primary)" />
       </a>
